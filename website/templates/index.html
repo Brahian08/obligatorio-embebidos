@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sistemas Embebidos - Obligatorio</title>
+        <style>
+            body {
+                background-color: gray;
+            }
+
+            header {
+                background-color: #f2f2f2;
+                text-align: center;
+                align-items: center;
+                width: 100%;
+            }
+
+            main {
+                background-color: #ddd;
+                height: 90vh;
+            }
+
+            #divTabla {
+                overflow: auto;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 25px 0;
+                font-size: 18px;
+                text-align: center;
+                border-color: black;
+            }   
+            th, td {
+                padding: 12px;
+                border: 1px solid #ddd;
+            }
+            th {
+                background-color: #f2f2f2;
+                text-align: center;
+            }
+
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+                border: 2px solid darkgray;
+            }
+
+            button {
+                width: 25%;
+                height: 15%;    
+                margin: 5px;          
+            }
+
+            footer {
+                background: #ddd;
+                width: 100%;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Registros</h1>
+        </header>
+            
+        <main>
+            <div id="divTabla">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>TimeStamp</th>
+                            <th>Frecuencia</th>
+                            <th>Luz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for registro in datos %}
+                        <tr>
+                            <td>{{ registro[1] }}</td>
+                            <td>{{ registro[2] }}</td>
+                            <td>{{ registro[3] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="center">
+                <button>Forzar prender alarma</button>
+                <button>Forzar apagar alarma</button>
+                <button>Desforzar alarma</button>
+            </div>
+        </main>
+
+
+        <footer>
+            Universidad ORT - Facultad de Ingenieria 
+        </footer>
+    </body>
+</html>
